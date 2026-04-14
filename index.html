@@ -1,321 +1,598 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WhatsApp que Vende Todos os Dias</title>
-  <meta name="description" content="Treinamento online e ao vivo para transformar conversas no WhatsApp em vendas reais." />
+  <title>WhatsApp que Vende Todos os Dias | João Neto</title>
+  <meta name="description" content="Treinamento online e ao vivo para pequenos empreendedores que querem vender mais pelo WhatsApp com estratégia, prática e acompanhamento real." />
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --primary: #773300;
+      --secondary: #b4b4b4;
+      --bg: #ffffff;
+      --text: #111111;
+      --soft: #f6f6f6;
+      --border: #e3e3e3;
+      --dark: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .hero {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      padding: 48px 20px;
-      text-align: center;
-    }
-    .hero .wrap,
-    .section .wrap,
-    .footer .wrap {
-      max-width: 900px;
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
       margin: 0 auto;
+      padding: 0 20px;
     }
-    .tag {
+
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 0;
+    }
+
+    .topbar img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hero {
+      padding: 60px 0 50px;
+      background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
       display: inline-block;
-      background: #22c55e;
-      color: #062b13;
-      font-weight: bold;
-      padding: 8px 14px;
+      background: rgba(119, 51, 0, 0.08);
+      color: var(--primary);
+      border: 1px solid rgba(119, 51, 0, 0.18);
       border-radius: 999px;
-      margin-bottom: 18px;
+      padding: 10px 16px;
       font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 18px;
     }
+
     h1 {
-      font-size: 38px;
-      margin: 0 0 16px;
-      line-height: 1.15;
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      color: var(--dark);
     }
-    .subtitle {
+
+    .hero p {
       font-size: 20px;
-      max-width: 760px;
-      margin: 0 auto 28px;
-      color: #e2e8f0;
+      margin: 0 0 28px;
+      color: #333;
     }
-    .cta {
+
+    .hero-image img {
+      width: 100%;
+      max-width: 430px;
+      border-radius: 22px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .btn {
       display: inline-block;
-      background: #25D366;
-      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
-      padding: 16px 24px;
-      border-radius: 10px;
-      font-size: 18px;
+      font-size: 17px;
+      transition: 0.2s ease;
     }
-    .cta:hover { opacity: 0.95; }
-    .section {
-      padding: 42px 20px;
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
     }
-    .white { background: white; }
-    .gray { background: #eef2f7; }
-    h2 {
-      font-size: 30px;
-      margin-top: 0;
-      margin-bottom: 18px;
-      color: #0f172a;
+
+    .btn-primary:hover {
+      opacity: 0.92;
     }
-    p {
-      font-size: 18px;
-      margin-top: 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
-    .gray .card {
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
       background: #fff;
     }
-    ul.checks {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+    .btn-outline:hover {
+      background: #faf6f3;
     }
-    ul.checks li {
-      margin-bottom: 12px;
-      font-size: 18px;
+
+    .section {
+      padding: 70px 0;
     }
-    .highlight {
-      background: #dcfce7;
-      border-left: 6px solid #22c55e;
-      padding: 18px;
-      border-radius: 10px;
+
+    .section.alt {
+      background: var(--soft);
+    }
+
+    h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: #444;
       font-size: 19px;
+      margin-bottom: 34px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: var(--primary);
+    }
+
+    .card p {
+      margin: 0;
+      color: #333;
+      font-size: 17px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .check-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 17px;
+    }
+
+    .highlight-box {
+      background: #fff;
+      border-left: 5px solid var(--primary);
+      border-radius: 14px;
+      padding: 22px;
+      font-size: 20px;
       font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
     }
-    .price-box {
-      background: #0f172a;
-      color: white;
-      border-radius: 16px;
-      padding: 26px;
-      text-align: center;
+
+    .offer-box {
+      background: #111111;
+      color: #fff;
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
     }
-    .price-box .small {
-      color: #cbd5e1;
-      font-size: 16px;
-    }
-    .faq-item {
-      background: white;
-      border-radius: 12px;
-      padding: 18px;
+
+    .offer-box h3 {
+      margin-top: 0;
+      font-size: 30px;
       margin-bottom: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      color: #fff;
     }
+
+    .offer-line {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #e6e6e6;
+    }
+
+    .price {
+      margin: 24px 0 8px;
+      font-size: 18px;
+      color: #d6d6d6;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      opacity: 0.8;
+    }
+
+    .new-price {
+      display: block;
+      font-size: 42px;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .small-note {
+      margin-top: 10px;
+      color: #d5d5d5;
+      font-size: 15px;
+    }
+
+    .authority {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .authority img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .bonus-card {
+      border-top: 4px solid var(--primary);
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
     .faq-item strong {
       display: block;
       margin-bottom: 8px;
       font-size: 18px;
-      color: #0f172a;
+      color: var(--dark);
     }
-    .footer {
-      background: #0f172a;
-      color: #cbd5e1;
+
+    .footer-cta {
       text-align: center;
-      padding: 26px 20px;
+    }
+
+    .footer {
+      background: #0d0d0d;
+      color: #d7d7d7;
+      text-align: center;
+      padding: 28px 20px;
       font-size: 15px;
     }
-    @media (max-width: 700px) {
-      h1 { font-size: 30px; }
-      .subtitle { font-size: 18px; }
-      h2 { font-size: 26px; }
-      .grid { grid-template-columns: 1fr; }
-      .cta {
-        display: block;
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .authority,
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .topbar img {
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 40px 0 30px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .btn {
         width: 100%;
+        text-align: center;
+      }
+
+      .offer-box {
+        padding: 24px;
+      }
+
+      .new-price {
+        font-size: 36px;
       }
     }
   </style>
 </head>
 <body>
 
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <img src="logo-desatar.png" alt="Desatar Consultoria Comercial" />
+    </div>
+  </header>
+
   <section class="hero">
-    <div class="wrap">
-      <div class="tag">TREINAMENTO ONLINE E AO VIVO</div>
-      <h1>Seu WhatsApp está cheio de conversas… mas poucas viram venda?</h1>
-      <p class="subtitle">
-        Aprenda a transformar conversas em clientes com um treinamento prático, direto ao ponto e feito para quem precisa vender de verdade.
-      </p>
-      <a class="cta" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20treinamento%20WhatsApp%20que%20vende." target="_blank">
-        Quero falar no WhatsApp
-      </a>
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">TREINAMENTO ONLINE E AO VIVO</div>
+        <h1>Seu WhatsApp está cheio de conversas, mas poucas viram venda?</h1>
+        <p>
+          Aprenda a transformar conversas em clientes com um treinamento prático, direto ao ponto e feito para pequenos empreendedores que precisam vender de verdade.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20entrar%20no%20treinamento%20WhatsApp%20que%20Vende%20Todos%20os%20Dias." target="_blank">Quero entrar no treinamento</a>
+          <a class="btn btn-outline" href="#oferta">Ver detalhes da turma</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="joao-neto.jpg" alt="João Neto" />
+      </div>
     </div>
   </section>
 
-  <section class="section white">
-    <div class="wrap">
-      <h2>Esse treinamento é para você que:</h2>
-      <div class="grid">
-        <div class="card">
-          <ul class="checks">
-            <li>✔ conversa com muita gente, mas vende menos do que deveria</li>
-            <li>✔ responde clientes todos os dias e sente que está perdendo oportunidades</li>
-            <li>✔ não sabe exatamente o que falar para conduzir a conversa</li>
-          </ul>
+  <section class="section">
+    <div class="container">
+      <h2>Esse treinamento é para você que</h2>
+      <p class="section-subtitle">
+        trabalha muito, responde clientes todos os dias, mas sente que ainda está deixando vendas na mesa por não saber exatamente como conduzir a conversa.
+      </p>
+      <div class="grid-2">
+        <div class="check-list">
+          <div class="check-item">Você fala com muita gente, mas poucos compram</div>
+          <div class="check-item">Você responde clientes e sente que a conversa não anda</div>
+          <div class="check-item">Você já tentou dicas da internet, mas nada funcionou de verdade</div>
         </div>
-        <div class="card">
-          <ul class="checks">
-            <li>✔ já viu muita dica na internet, mas nada funcionou de verdade</li>
-            <li>✔ precisa aumentar as vendas com urgência</li>
-            <li>✔ quer algo prático, simples e aplicável no mesmo dia</li>
-          </ul>
+        <div class="check-list">
+          <div class="check-item">Você trava na hora de apresentar preço ou conduzir o fechamento</div>
+          <div class="check-item">Você precisa vender mais com o WhatsApp que já tem</div>
+          <div class="check-item">Você quer algo simples, prático e aplicável no mesmo dia</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section gray">
-    <div class="wrap">
-      <h2>Aqui não é teoria vazia</h2>
-      <p>
-        Antes do treinamento, eu peço prints reais das suas conversas para entender onde você está perdendo vendas.
-        Ou seja: você não entra num curso genérico. Você entra num treinamento pensado para o seu problema real.
+  <section class="section alt">
+    <div class="container">
+      <h2>Aqui você não entra em um curso genérico</h2>
+      <p class="section-subtitle">
+        Antes das aulas, eu analiso prints reais das suas conversas para entender onde você está perdendo vendas. Assim, o treinamento fica muito mais próximo da sua realidade.
       </p>
-      <div class="grid">
+      <div class="grid-3">
         <div class="card">
-          <strong>Antes do encontro ao vivo</strong>
-          <p>Você envia prints e eu faço um diagnóstico do seu caso.</p>
+          <h3>Antes</h3>
+          <p>Você envia prints reais e eu faço um diagnóstico do seu caso.</p>
         </div>
         <div class="card">
-          <strong>Durante o treinamento</strong>
-          <p>Tiramos dúvidas, fazemos testes e ajustamos mensagens na prática.</p>
+          <h3>Ao vivo</h3>
+          <p>Tiramos dúvidas, ajustamos mensagens e trabalhamos situações práticas de venda.</p>
         </div>
         <div class="card">
-          <strong>Depois do treinamento</strong>
-          <p>Você entra em um grupo de WhatsApp para continuar aprendendo e recebendo acompanhamento.</p>
-        </div>
-        <div class="card">
-          <strong>Meu compromisso</strong>
-          <p>Eu não só ensino. Eu pego na mão e ajudo você a vender de verdade.</p>
+          <h3>Depois</h3>
+          <p>Você entra em um grupo por 15 dias para continuar recebendo orientação e suporte.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section white">
-    <div class="wrap">
+  <section class="section">
+    <div class="container">
       <h2>O que você vai aprender</h2>
-      <div class="grid">
+      <p class="section-subtitle">
+        O foco não é teoria bonita. O foco é fazer você conversar melhor, responder melhor e vender mais.
+      </p>
+      <div class="grid-3">
         <div class="card">
-          <ul class="checks">
-            <li>✔ como iniciar conversas que geram interesse</li>
-            <li>✔ como responder sem parecer insistente</li>
-            <li>✔ como conduzir a conversa até o fechamento</li>
-          </ul>
+          <h3>Início da conversa</h3>
+          <p>Como abrir conversas que despertam interesse e fazem o cliente continuar.</p>
         </div>
         <div class="card">
-          <ul class="checks">
-            <li>✔ como parar de perder clientes por erro de comunicação</li>
-            <li>✔ como vender mais usando o WhatsApp que você já tem</li>
-            <li>✔ como ajustar mensagens para vender com mais clareza</li>
-          </ul>
+          <h3>Condução da venda</h3>
+          <p>Como responder sem parecer insistente e levar a conversa para o fechamento.</p>
+        </div>
+        <div class="card">
+          <h3>Correção de erros</h3>
+          <p>Como identificar o que está travando suas vendas e ajustar rapidamente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section gray">
-    <div class="wrap">
-      <h2>Resultados reais</h2>
-      <div class="highlight">
-        Já tive cliente que aumentou em 30% as vendas na primeira semana, apenas ajustando a forma de conversar.
+  <section class="section alt">
+    <div class="container">
+      <h2>Resultado que importa é venda</h2>
+      <div class="highlight-box">
+        Já tive cliente que aumentou em 30% as vendas na primeira semana apenas ajustando a forma de conversar pelo WhatsApp.
       </div>
-      <p style="margin-top:18px;">
-        Sem fórmula mágica. Sem enrolação. Sem papo de internet.  
-        É prática, análise real e ajuste no que realmente trava suas vendas.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container authority">
+      <div>
+        <img src="joao-neto.jpg" alt="João Neto especialista em vendas pelo WhatsApp" />
+      </div>
+      <div>
+        <h2>Quem vai te ensinar</h2>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          <strong>João Neto</strong><br><br>
+          Sou profissional com mais de 13 anos de experiência em comunicação e vendas.<br><br>
+          Ao longo desses anos, acompanhei de perto o que faz uma conversa virar venda e o que faz o cliente desistir.<br><br>
+          Hoje ajudo pequenos empreendedores a ajustar a forma de conversar com clientes e transformar mensagens comuns em vendas reais.<br><br>
+          Meu trabalho é analisar o que você já faz e corrigir o que está travando suas vendas.<br><br>
+          Só prática. Só o que funciona.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Bônus que aumentam o valor do treinamento</h2>
+      <p class="section-subtitle">
+        Além das aulas ao vivo, você recebe materiais e suporte que ajudam a aplicar o conteúdo de forma muito mais rápida.
+      </p>
+      <div class="grid-2">
+        <div class="card bonus-card">
+          <h3>Guia prático do WhatsApp Business</h3>
+          <p>Um material direto ao ponto mostrando como usar melhor etiquetas, respostas rápidas, mensagens automáticas, catálogo e organização do atendimento.</p>
+        </div>
+        <div class="card bonus-card">
+          <h3>Palavras e frases que aumentam resposta</h3>
+          <p>Uma seleção prática de frases, gatilhos e formas de responder que ajudam a prender mais atenção e aumentar o retorno do cliente.</p>
+        </div>
+        <div class="card bonus-card">
+          <h3>Análise personalizada das suas conversas</h3>
+          <p>Você envia prints reais e recebe ajustes específicos para o seu caso, não dicas genéricas.</p>
+        </div>
+        <div class="card bonus-card">
+          <h3>Suporte por 15 dias no grupo</h3>
+          <p>Depois das aulas, você continua tendo contato comigo para tirar dúvidas e ajustar sua comunicação.</p>
+        </div>
+        <div class="card bonus-card">
+          <h3>Gravação das aulas por 30 dias</h3>
+          <p>Você pode rever o conteúdo com calma e aplicar no seu ritmo durante 30 dias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="oferta">
+    <div class="container">
+      <div class="offer-box">
+        <h3>Nova turma aberta</h3>
+        <div class="offer-line">Dias 18 e 19 de Maio</div>
+        <div class="offer-line">19h30 às 21h30</div>
+        <div class="offer-line">Ao vivo pelo Google Meet</div>
+        <div class="offer-line">Apenas 12 vagas disponíveis</div>
+
+        <div class="price">
+          De <span class="old-price">R$197,00</span>
+          <span class="new-price">R$97,00</span>
+        </div>
+
+        <div class="small-note">
+          Pagamento único. Sem mensalidade.
+        </div>
+
+        <div class="cta-row" style="margin-top:24px;">
+          <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20no%20treinamento%20WhatsApp%20que%20Vende%20Todos%20os%20Dias." target="_blank">Quero garantir minha vaga</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Garantia de 7 dias</h2>
+      <p class="section-subtitle">
+        Se você participar do treinamento e dentro de 7 dias sentir que ele não foi útil para você, é só avisar e eu devolvo seu dinheiro.
       </p>
     </div>
   </section>
 
-  <section class="section white">
-    <div class="wrap">
-      <h2>O que está incluído</h2>
-      <div class="grid">
-        <div class="card"><strong>Diagnóstico antes do curso</strong><p>Análise dos seus prints e do seu problema real.</p></div>
-        <div class="card"><strong>Treinamento ao vivo</strong><p>Encontro online, direto ao ponto e totalmente prático.</p></div>
-        <div class="card"><strong>Dúvidas e testes ao vivo</strong><p>Você participa, pergunta e ajusta junto.</p></div>
-        <div class="card"><strong>Grupo de acompanhamento</strong><p>Continuidade no WhatsApp com orientação e suporte.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section gray">
-    <div class="wrap">
-      <h2>Como entrar</h2>
-      <div class="price-box">
-        <p class="small">As vagas são preenchidas por conversa no WhatsApp para eu entender seu momento e te explicar os próximos passos.</p>
-        <a class="cta" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20entrar%20no%20treinamento%20WhatsApp%20que%20vende." target="_blank">
-          Quero entrar no treinamento
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section white">
-    <div class="wrap">
+  <section class="section">
+    <div class="container">
       <h2>Perguntas rápidas</h2>
 
       <div class="faq-item">
-        <strong>É para quem nunca estudou vendas?</strong>
-        Sim. O treinamento é prático e pensado para quem quer aplicar rápido.
+        <strong>Esse treinamento serve para quem nunca estudou vendas?</strong>
+        Sim. Ele foi pensado para pequenos empreendedores e vendedores que querem algo prático e fácil de aplicar.
       </div>
 
       <div class="faq-item">
-        <strong>É só para quem vende pelo WhatsApp?</strong>
-        Sim. O foco é melhorar sua comunicação e transformar conversa em venda dentro do WhatsApp.
+        <strong>É só para quem usa WhatsApp para vender?</strong>
+        Sim. O foco do treinamento é melhorar sua comunicação comercial dentro do WhatsApp.
       </div>
 
       <div class="faq-item">
-        <strong>Vou poder tirar dúvidas?</strong>
-        Sim. O treinamento é ao vivo e você pode perguntar e ajustar seu caso na prática.
+        <strong>Vou poder tirar dúvidas ao vivo?</strong>
+        Sim. Durante as aulas você pode perguntar, ajustar e entender como aplicar no seu caso.
       </div>
 
       <div class="faq-item">
-        <strong>Tem acompanhamento depois?</strong>
-        Sim. Você entra em um grupo de WhatsApp onde continuo ensinando e acompanhando.
+        <strong>Vou ficar sem acesso se não conseguir assistir tudo?</strong>
+        Não. Você terá acesso à gravação das aulas por 30 dias.
       </div>
     </div>
   </section>
 
-  <section class="section gray">
-    <div class="wrap" style="text-align:center;">
-      <h2>Seu problema não é falta de esforço</h2>
-      <p>
-        Muitas vezes, você já está falando com pessoas interessadas.  
-        O que falta é a forma certa de conduzir a conversa.
+  <section class="section alt footer-cta">
+    <div class="container">
+      <h2>Seu problema pode não ser falta de esforço</h2>
+      <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">
+        Muitas vezes você já fala com pessoas interessadas. O que falta é ajustar a forma como conduz a conversa.
       </p>
-      <p>
-        Clique no botão abaixo e fale comigo para entender se esse treinamento faz sentido para o seu momento.
-      </p>
-      <a class="cta" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20saber%20se%20esse%20treinamento%20serve%20para%20mim." target="_blank">
-        Falar agora no WhatsApp
-      </a>
+      <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20treinamento%20WhatsApp%20que%20Vende%20Todos%20os%20Dias." target="_blank">Falar agora no WhatsApp</a>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="wrap">
-      WhatsApp que Vende Todos os Dias • Treinamento online e ao vivo
+    <div class="container">
+      João Neto | Desatar Consultoria Comercial
     </div>
   </footer>
 
