@@ -19,6 +19,9 @@
       --card-dark: #141414;
       --card-light: #ffffff;
       --gold: #ffd76a;
+      --soft-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      --soft-shadow-dark: 0 18px 40px rgba(0,0,0,0.28);
+      --radius: 22px;
     }
 
     * {
@@ -74,12 +77,13 @@
       background:
         radial-gradient(circle at top right, rgba(37,211,102,0.18), transparent 30%),
         linear-gradient(180deg, #0b0b0b 0%, #111111 100%);
-      padding: 70px 0 50px;
+      padding: 70px 0 56px;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 36px;
       align-items: center;
     }
@@ -102,6 +106,7 @@
       line-height: 1.05;
       margin: 0 0 18px;
       color: var(--white);
+      letter-spacing: -0.02em;
     }
 
     .hero p {
@@ -162,12 +167,17 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
     .hero-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      box-shadow: var(--soft-shadow-dark);
     }
 
     .hero-card img {
@@ -188,6 +198,97 @@
 
     .hero-card-content span {
       color: #d2d2d2;
+      font-size: 15px;
+    }
+
+    .mockup-card {
+      background: linear-gradient(180deg, #171717, #0f0f0f);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--soft-shadow-dark);
+    }
+
+    .mockup-window {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #fff;
+      color: #111;
+    }
+
+    .mockup-top {
+      background: #ececec;
+      padding: 10px 14px;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #c7c7c7;
+    }
+
+    .mockup-body {
+      padding: 22px;
+      background: linear-gradient(180deg, #ffffff, #f7f7f7);
+    }
+
+    .mockup-badge {
+      display: inline-block;
+      background: rgba(37,211,102,0.12);
+      color: #167a40;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .mockup-title {
+      font-size: 24px;
+      line-height: 1.15;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .mockup-lines {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .mockup-line {
+      background: #f1f1f1;
+      border: 1px solid #e7e7e7;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+
+    .mockup-price {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .mockup-price strong {
+      display: block;
+      color: #111;
+      font-size: 28px;
+      margin-top: 4px;
+    }
+
+    .mockup-btn {
+      background: var(--green);
+      color: #04130a;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 12px;
+      padding: 14px 16px;
       font-size: 15px;
     }
 
@@ -216,7 +317,7 @@
     }
 
     .section {
-      padding: 70px 0;
+      padding: 74px 0;
     }
 
     .light-section {
@@ -238,6 +339,7 @@
       font-size: 38px;
       line-height: 1.1;
       margin: 0 0 14px;
+      letter-spacing: -0.02em;
     }
 
     .section-subtitle {
@@ -272,7 +374,7 @@
       background: var(--card-light);
       border: 1px solid #e6e6e6;
       color: #111;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      box-shadow: var(--soft-shadow);
     }
 
     .card-dark h3, .card-light h3 {
@@ -286,27 +388,83 @@
       opacity: 0.95;
     }
 
-    .bullet-list {
+    .icon-list {
       display: grid;
       gap: 14px;
       margin-top: 26px;
     }
 
-    .bullet-item-dark, .bullet-item-light {
-      border-radius: 16px;
-      padding: 16px 18px;
-      font-size: 17px;
-    }
-
-    .bullet-item-dark {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .bullet-item-light {
+    .icon-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: center;
       background: #fff;
       border: 1px solid #e7e7e7;
+      border-radius: 18px;
+      padding: 15px 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .icon-item-dark {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .icon-circle.light {
+      background: rgba(37,211,102,0.1);
+      color: #13743d;
+    }
+
+    .icon-circle.dark {
+      background: rgba(37,211,102,0.12);
+      color: #7cffab;
+    }
+
+    .icon-text strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 2px;
+    }
+
+    .icon-text span {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .icon-item-dark .icon-text span {
+      color: #d6d6d6;
+    }
+
+    .process-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--green);
+      border-radius: 22px 0 0 22px;
     }
 
     .result-box {
@@ -405,6 +563,31 @@
       padding: 8px 12px;
       border-radius: 999px;
       margin-bottom: 14px;
+    }
+
+    .bonus-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .bonus-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(37,211,102,0.12);
+      color: #7cffab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-top: 2px;
+    }
+
+    .main-bonus .bonus-icon {
+      background: rgba(255,215,106,0.22);
+      color: #ffe08b;
     }
 
     .testimonials-placeholder {
@@ -511,11 +694,15 @@
       .section-subtitle {
         font-size: 18px;
       }
+
+      .hero-side {
+        order: -1;
+      }
     }
 
     @media (max-width: 640px) {
       .hero {
-        padding: 50px 0 34px;
+        padding: 46px 0 34px;
       }
 
       h1 {
@@ -538,6 +725,25 @@
         width: 58px;
         height: 58px;
         font-size: 26px;
+      }
+
+      .icon-item,
+      .icon-item-dark,
+      .bonus-card {
+        grid-template-columns: 46px 1fr;
+        gap: 12px;
+      }
+
+      .icon-circle,
+      .bonus-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        font-size: 21px;
+      }
+
+      .mockup-body {
+        padding: 18px;
       }
     }
   </style>
@@ -590,11 +796,38 @@
           </div>
         </div>
 
-        <div class="hero-card">
-          <img src="DSC_1555-2.jpg" alt="João Neto" />
-          <div class="hero-card-content">
-            <strong>João Neto</strong>
-            <span>Desatar Consultoria Comercial</span>
+        <div class="hero-side">
+          <div class="hero-card">
+            <img src="DSC_1555-2.jpg" alt="João Neto" />
+            <div class="hero-card-content">
+              <strong>João Neto</strong>
+              <span>Desatar Consultoria Comercial</span>
+            </div>
+          </div>
+
+          <div class="mockup-card">
+            <div class="mockup-window">
+              <div class="mockup-top">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-badge">TREINAMENTO AO VIVO</div>
+                <div class="mockup-title">WhatsApp que Vende</div>
+                <div class="mockup-lines">
+                  <div class="mockup-line">📅 18 e 19 de Maio</div>
+                  <div class="mockup-line">⏰ 19h30 às 21h30</div>
+                  <div class="mockup-line">💻 Ao vivo pelo Google Meet</div>
+                  <div class="mockup-line">🎯 12 vagas disponíveis</div>
+                </div>
+                <div class="mockup-price">
+                  Investimento
+                  <strong>R$97,00</strong>
+                </div>
+                <div class="mockup-btn">Entrar no treinamento</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -603,19 +836,62 @@
 
   <section class="section light-section">
     <div class="container">
-      <h2>Você pode estar perdendo vendas sem perceber</h2>
+      <h2>Esse treinamento é para você que</h2>
       <p class="section-subtitle">
-        Enquanto você não ajusta isso, provavelmente está:
+        trabalha muito, responde clientes todos os dias, mas sente que está perdendo vendas por não saber exatamente como conduzir a conversa.
       </p>
 
       <div class="grid-2">
-        <div class="bullet-list">
-          <div class="bullet-item-light">Perdendo clientes que já estavam interessados</div>
-          <div class="bullet-item-light">Deixando dinheiro na mesa todos os dias</div>
+        <div class="icon-list">
+          <div class="icon-item">
+            <div class="icon-circle light">💬</div>
+            <div class="icon-text">
+              <strong>Conversa com clientes no WhatsApp</strong>
+              <span>Mas sente que poucas conversas realmente avançam.</span>
+            </div>
+          </div>
+
+          <div class="icon-item">
+            <div class="icon-circle light">👻</div>
+            <div class="icon-text">
+              <strong>Vê cliente sumir</strong>
+              <span>Mesmo depois de demonstrar interesse no seu produto ou serviço.</span>
+            </div>
+          </div>
+
+          <div class="icon-item">
+            <div class="icon-circle light">🔒</div>
+            <div class="icon-text">
+              <strong>Tem dificuldade de fechar</strong>
+              <span>Chega até certo ponto da conversa e depois trava.</span>
+            </div>
+          </div>
         </div>
-        <div class="bullet-list">
-          <div class="bullet-item-light">Tendo conversas que não evoluem</div>
-          <div class="bullet-item-light">E o pior: sem perceber exatamente onde está errando</div>
+
+        <div class="icon-list">
+          <div class="icon-item">
+            <div class="icon-circle light">💵</div>
+            <div class="icon-text">
+              <strong>Não sabe apresentar preço</strong>
+              <span>Tem receio de falar valor e perder o cliente.</span>
+            </div>
+          </div>
+
+          <div class="icon-item">
+            <div class="icon-circle light">📈</div>
+            <div class="icon-text">
+              <strong>Quer vender mais</strong>
+              <span>Usando melhor o WhatsApp que já tem hoje.</span>
+            </div>
+          </div>
+
+          <div class="icon-item">
+            <div class="icon-circle light">⚡</div>
+            <div class="icon-text">
+              <strong>Quer algo prático</strong>
+              <span>Sem teoria cansativa e com aplicação no mesmo dia.</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -623,24 +899,97 @@
 
   <section class="section dark-section">
     <div class="container">
+      <h2>Você pode estar perdendo vendas sem perceber</h2>
+      <p class="section-subtitle">
+        Enquanto você não ajusta isso, provavelmente está:
+      </p>
+
+      <div class="grid-2">
+        <div class="icon-list">
+          <div class="icon-item-dark">
+            <div class="icon-circle dark">🧲</div>
+            <div class="icon-text">
+              <strong>Perdendo clientes interessados</strong>
+              <span>Gente que já estava quase comprando.</span>
+            </div>
+          </div>
+
+          <div class="icon-item-dark">
+            <div class="icon-circle dark">💸</div>
+            <div class="icon-text">
+              <strong>Deixando dinheiro na mesa</strong>
+              <span>Todos os dias, sem perceber claramente.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="icon-list">
+          <div class="icon-item-dark">
+            <div class="icon-circle dark">🔄</div>
+            <div class="icon-text">
+              <strong>Tendo conversas que não evoluem</strong>
+              <span>Você responde, mas a venda não anda.</span>
+            </div>
+          </div>
+
+          <div class="icon-item-dark">
+            <div class="icon-circle dark">🎯</div>
+            <div class="icon-text">
+              <strong>Errando sem perceber</strong>
+              <span>Sem saber exatamente em que ponto está travando.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section">
+    <div class="container">
       <h2>Como funciona na prática</h2>
       <p class="section-subtitle">
         Você não entra em um curso genérico. O treinamento foi pensado para mexer no que realmente trava suas vendas.
       </p>
 
       <div class="grid-3">
-        <div class="card-dark">
-          <h3>1. Diagnóstico antes</h3>
-          <p>Você envia prints reais e eu analiso onde você está perdendo vendas.</p>
+        <div class="card-light process-card">
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🧾</div>
+            <div>
+              <h3>Diagnóstico antes</h3>
+              <p>Você envia prints reais e eu analiso onde você está perdendo vendas.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-dark">
-          <h3>2. Ajuste ao vivo</h3>
-          <p>Durante o treinamento, mostramos exatamente o que falar, como responder e como conduzir a conversa.</p>
+
+        <div class="card-light process-card">
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🎥</div>
+            <div>
+              <h3>Ajuste ao vivo</h3>
+              <p>Durante o treinamento, mostramos exatamente o que falar, como responder e como conduzir a conversa.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-dark">
-          <h3>3. Acompanhamento depois</h3>
-          <p>Você aplica com suporte por 15 dias para corrigir e melhorar na prática.</p>
+
+        <div class="card-light process-card">
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🤝</div>
+            <div>
+              <h3>Acompanhamento depois</h3>
+              <p>Você aplica com suporte por 15 dias para corrigir e melhorar na prática.</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mid-section">
+    <div class="container">
+      <h2>Resultado que importa é venda</h2>
+      <div class="result-box">
+        Já tive cliente que começou a fechar mais vendas em poucos dias apenas ajustando a forma de conversar no WhatsApp.
       </div>
     </div>
   </section>
@@ -654,26 +1003,34 @@
 
       <div class="grid-3">
         <div class="card-light">
-          <h3>Como iniciar melhor</h3>
-          <p>Aprenda a abrir conversas que despertam interesse e fazem o cliente continuar respondendo.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🚀</div>
+            <div>
+              <h3>Como iniciar melhor</h3>
+              <p>Aprenda a abrir conversas que despertam interesse e fazem o cliente continuar respondendo.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-light">
-          <h3>Como conduzir a venda</h3>
-          <p>Saiba como responder sem parecer insistente e levar a conversa de forma natural até o fechamento.</p>
-        </div>
-        <div class="card-light">
-          <h3>Como corrigir erros</h3>
-          <p>Descubra o que está travando suas vendas hoje e como ajustar isso mais rápido.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section mid-section">
-    <div class="container">
-      <h2>Resultado que importa é venda</h2>
-      <div class="result-box">
-        Já tive cliente que começou a fechar mais vendas em poucos dias apenas ajustando a forma de conversar no WhatsApp.
+        <div class="card-light">
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🧠</div>
+            <div>
+              <h3>Como conduzir a venda</h3>
+              <p>Saiba como responder sem parecer insistente e levar a conversa de forma natural até o fechamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-light">
+          <div class="bonus-card">
+            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🛠️</div>
+            <div>
+              <h3>Como corrigir erros</h3>
+              <p>Descubra o que está travando suas vendas hoje e como ajustar isso mais rápido.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -705,28 +1062,53 @@
       <div class="grid-2">
         <div class="card-dark main-bonus">
           <div class="bonus-tag">🎁 Bônus principal</div>
-          <h3>Análise personalizada das suas conversas ⭐</h3>
-          <p>Você envia suas conversas reais e recebe ajustes específicos para o seu caso.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon">⭐</div>
+            <div>
+              <h3>Análise personalizada das suas conversas</h3>
+              <p>Você envia suas conversas reais e recebe ajustes específicos para o seu caso.</p>
+            </div>
+          </div>
         </div>
 
         <div class="card-dark">
-          <h3>Guia prático do WhatsApp Business</h3>
-          <p>Aprenda a usar melhor etiquetas, respostas rápidas, mensagens automáticas, catálogo e organização do atendimento.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon">📘</div>
+            <div>
+              <h3>Guia prático do WhatsApp Business</h3>
+              <p>Aprenda a usar melhor etiquetas, respostas rápidas, mensagens automáticas, catálogo e organização do atendimento.</p>
+            </div>
+          </div>
         </div>
 
         <div class="card-dark">
-          <h3>Palavras e frases que aumentam resposta</h3>
-          <p>Uma seleção prática de frases, gatilhos e formas de responder que ajudam a prender mais atenção do cliente.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon">💬</div>
+            <div>
+              <h3>Palavras e frases que aumentam resposta</h3>
+              <p>Uma seleção prática de frases, gatilhos e formas de responder que ajudam a prender mais atenção do cliente.</p>
+            </div>
+          </div>
         </div>
 
         <div class="card-dark">
-          <h3>Suporte por 15 dias no grupo</h3>
-          <p>Depois das aulas, você continua tendo contato comigo para tirar dúvidas e ajustar sua comunicação.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon">🤝</div>
+            <div>
+              <h3>Suporte por 15 dias no grupo</h3>
+              <p>Depois das aulas, você continua tendo contato comigo para tirar dúvidas e ajustar sua comunicação.</p>
+            </div>
+          </div>
         </div>
 
         <div class="card-dark">
-          <h3>Gravação das aulas por 30 dias</h3>
-          <p>Você poderá rever as aulas com calma e aplicar no seu ritmo durante 30 dias.</p>
+          <div class="bonus-card">
+            <div class="bonus-icon">🎬</div>
+            <div>
+              <h3>Gravação das aulas por 30 dias</h3>
+              <p>Você poderá rever as aulas com calma e aplicar no seu ritmo durante 30 dias.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
