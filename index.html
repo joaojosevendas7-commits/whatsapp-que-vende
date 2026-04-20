@@ -334,27 +334,31 @@
     }
 
     .quick-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 16px;
+      background: linear-gradient(180deg, #171717 0%, #101010 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 20px 16px;
       text-align: center;
-      color: #ededed;
+      color: #d9d9d9;
       font-size: 15px;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 10px 24px rgba(0,0,0,0.18);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
     }
 
     .quick-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 24px rgba(0,0,0,0.18);
-      border-color: rgba(37,211,102,0.28);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.26);
+      border-color: rgba(37,211,102,0.35);
+      background: linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
     }
 
     .quick-box strong {
       display: block;
-      font-size: 18px;
-      color: #fff;
-      margin-bottom: 4px;
+      font-size: 28px;
+      line-height: 1;
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
     .section {
@@ -497,19 +501,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       flex-shrink: 0;
       transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
     }
 
     .icon-circle.light {
-      background: rgba(37,211,102,0.1);
-      color: #13743d;
+      background: #111111;
+      color: #ffffff;
     }
 
     .icon-circle.dark {
-      background: rgba(37,211,102,0.12);
-      color: #7cffab;
+      background: #ffffff;
+      color: #111111;
     }
 
     .icon-item:hover .icon-circle,
@@ -602,6 +608,8 @@
     .offer h3 {
       margin: 0 0 12px;
       font-size: 34px;
+      color: #ffffff;
+      letter-spacing: -0.02em;
     }
 
     .offer-line {
@@ -674,19 +682,21 @@
       width: 52px;
       height: 52px;
       border-radius: 16px;
-      background: rgba(37,211,102,0.12);
-      color: #7cffab;
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       margin-top: 2px;
       transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
     }
 
     .main-bonus .bonus-icon {
-      background: rgba(255,215,106,0.22);
-      color: #ffe08b;
+      background: rgba(255,215,106,0.18);
+      color: #fff2bf;
     }
 
     .card-dark:hover .bonus-icon,
@@ -926,7 +936,7 @@
         width: 46px;
         height: 46px;
         border-radius: 14px;
-        font-size: 21px;
+        font-size: 14px;
       }
 
       .mockup-body {
@@ -1005,10 +1015,10 @@
                 <div class="mockup-badge">TREINAMENTO AO VIVO</div>
                 <div class="mockup-title">WhatsApp que Vende</div>
                 <div class="mockup-lines">
-                  <div class="mockup-line">📅 18 e 19 de Maio</div>
-                  <div class="mockup-line">⏰ 19h30 às 21h30</div>
-                  <div class="mockup-line">💻 Ao vivo pelo Google Meet</div>
-                  <div class="mockup-line">🎯 12 vagas disponíveis</div>
+                  <div class="mockup-line">18 e 19 de Maio</div>
+                  <div class="mockup-line">19h30 às 21h30</div>
+                  <div class="mockup-line">Ao vivo pelo Google Meet</div>
+                  <div class="mockup-line">12 vagas disponíveis</div>
                 </div>
                 <div class="mockup-price">
                   Investimento
@@ -1033,7 +1043,7 @@
       <div class="grid-2">
         <div class="icon-list">
           <div class="icon-item reveal delay-1">
-            <div class="icon-circle light">💬</div>
+            <div class="icon-circle light">W</div>
             <div class="icon-text">
               <strong>Conversa com clientes no WhatsApp</strong>
               <span>Mas sente que poucas conversas realmente avançam.</span>
@@ -1041,7 +1051,7 @@
           </div>
 
           <div class="icon-item reveal delay-2">
-            <div class="icon-circle light">👻</div>
+            <div class="icon-circle light">C</div>
             <div class="icon-text">
               <strong>Vê cliente sumir</strong>
               <span>Mesmo depois de demonstrar interesse no seu produto ou serviço.</span>
@@ -1049,7 +1059,7 @@
           </div>
 
           <div class="icon-item reveal delay-3">
-            <div class="icon-circle light">🔒</div>
+            <div class="icon-circle light">F</div>
             <div class="icon-text">
               <strong>Tem dificuldade de fechar</strong>
               <span>Chega até certo ponto da conversa e depois trava.</span>
@@ -1059,7 +1069,7 @@
 
         <div class="icon-list">
           <div class="icon-item reveal delay-2">
-            <div class="icon-circle light">💵</div>
+            <div class="icon-circle light">R$</div>
             <div class="icon-text">
               <strong>Não sabe apresentar preço</strong>
               <span>Tem receio de falar valor e perder o cliente.</span>
@@ -1067,7 +1077,7 @@
           </div>
 
           <div class="icon-item reveal delay-3">
-            <div class="icon-circle light">📈</div>
+            <div class="icon-circle light">+</div>
             <div class="icon-text">
               <strong>Quer vender mais</strong>
               <span>Usando melhor o WhatsApp que já tem hoje.</span>
@@ -1075,7 +1085,7 @@
           </div>
 
           <div class="icon-item reveal delay-4">
-            <div class="icon-circle light">⚡</div>
+            <div class="icon-circle light">P</div>
             <div class="icon-text">
               <strong>Quer algo prático</strong>
               <span>Sem teoria cansativa e com aplicação no mesmo dia.</span>
@@ -1096,7 +1106,7 @@
       <div class="grid-2">
         <div class="icon-list">
           <div class="icon-item-dark reveal delay-1">
-            <div class="icon-circle dark">🧲</div>
+            <div class="icon-circle dark">V</div>
             <div class="icon-text">
               <strong>Perdendo clientes interessados</strong>
               <span>Gente que já estava quase comprando.</span>
@@ -1104,7 +1114,7 @@
           </div>
 
           <div class="icon-item-dark reveal delay-2">
-            <div class="icon-circle dark">💸</div>
+            <div class="icon-circle dark">R$</div>
             <div class="icon-text">
               <strong>Deixando dinheiro na mesa</strong>
               <span>Todos os dias, sem perceber claramente.</span>
@@ -1114,7 +1124,7 @@
 
         <div class="icon-list">
           <div class="icon-item-dark reveal delay-3">
-            <div class="icon-circle dark">🔄</div>
+            <div class="icon-circle dark">E</div>
             <div class="icon-text">
               <strong>Tendo conversas que não evoluem</strong>
               <span>Você responde, mas a venda não anda.</span>
@@ -1122,7 +1132,7 @@
           </div>
 
           <div class="icon-item-dark reveal delay-4">
-            <div class="icon-circle dark">🎯</div>
+            <div class="icon-circle dark">!</div>
             <div class="icon-text">
               <strong>Errando sem perceber</strong>
               <span>Sem saber exatamente em que ponto está travando.</span>
@@ -1143,7 +1153,7 @@
       <div class="grid-3">
         <div class="card-light process-card reveal delay-1">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🧾</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">01</div>
             <div>
               <h3>Diagnóstico antes</h3>
               <p>Você envia prints reais e eu analiso onde você está perdendo vendas.</p>
@@ -1153,7 +1163,7 @@
 
         <div class="card-light process-card reveal delay-2">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🎥</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">02</div>
             <div>
               <h3>Ajuste ao vivo</h3>
               <p>Durante o treinamento, mostramos exatamente o que falar, como responder e como conduzir a conversa.</p>
@@ -1163,7 +1173,7 @@
 
         <div class="card-light process-card reveal delay-3">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🤝</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">03</div>
             <div>
               <h3>Acompanhamento depois</h3>
               <p>Você aplica com suporte por 15 dias para corrigir e melhorar na prática.</p>
@@ -1193,7 +1203,7 @@
       <div class="grid-3">
         <div class="card-light reveal delay-1">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🚀</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">A</div>
             <div>
               <h3>Como iniciar melhor</h3>
               <p>Aprenda a abrir conversas que despertam interesse e fazem o cliente continuar respondendo.</p>
@@ -1203,7 +1213,7 @@
 
         <div class="card-light reveal delay-2">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🧠</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">B</div>
             <div>
               <h3>Como conduzir a venda</h3>
               <p>Saiba como responder sem parecer insistente e levar a conversa de forma natural até o fechamento.</p>
@@ -1213,7 +1223,7 @@
 
         <div class="card-light reveal delay-3">
           <div class="bonus-card">
-            <div class="bonus-icon" style="background: rgba(37,211,102,0.1); color: #167a40;">🛠️</div>
+            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">C</div>
             <div>
               <h3>Como corrigir erros</h3>
               <p>Descubra o que está travando suas vendas hoje e como ajustar isso mais rápido.</p>
@@ -1252,7 +1262,7 @@
         <div class="card-dark main-bonus reveal delay-1">
           <div class="bonus-tag">🎁 Bônus principal</div>
           <div class="bonus-card">
-            <div class="bonus-icon">⭐</div>
+            <div class="bonus-icon">VIP</div>
             <div>
               <h3>Análise personalizada das suas conversas</h3>
               <p>Você envia suas conversas reais e recebe ajustes específicos para o seu caso.</p>
@@ -1262,7 +1272,7 @@
 
         <div class="card-dark reveal delay-2">
           <div class="bonus-card">
-            <div class="bonus-icon">📘</div>
+            <div class="bonus-icon">GUIA</div>
             <div>
               <h3>Guia prático do WhatsApp Business</h3>
               <p>Aprenda a usar melhor etiquetas, respostas rápidas, mensagens automáticas, catálogo e organização do atendimento.</p>
@@ -1272,7 +1282,7 @@
 
         <div class="card-dark reveal delay-3">
           <div class="bonus-card">
-            <div class="bonus-icon">💬</div>
+            <div class="bonus-icon">COPY</div>
             <div>
               <h3>Palavras e frases que aumentam resposta</h3>
               <p>Uma seleção prática de frases, gatilhos e formas de responder que ajudam a prender mais atenção do cliente.</p>
@@ -1282,7 +1292,7 @@
 
         <div class="card-dark reveal delay-4">
           <div class="bonus-card">
-            <div class="bonus-icon">🤝</div>
+            <div class="bonus-icon">SUP</div>
             <div>
               <h3>Suporte por 15 dias no grupo</h3>
               <p>Depois das aulas, você continua tendo contato comigo para tirar dúvidas e ajustar sua comunicação.</p>
@@ -1292,7 +1302,7 @@
 
         <div class="card-dark reveal delay-5">
           <div class="bonus-card">
-            <div class="bonus-icon">🎬</div>
+            <div class="bonus-icon">30D</div>
             <div>
               <h3>Gravação das aulas por 30 dias</h3>
               <p>Você poderá rever as aulas com calma e aplicar no seu ritmo durante 30 dias.</p>
