@@ -679,6 +679,81 @@
       color: #5c4300;
     }
 
+    .testimonials-band {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .testimonials-band span {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e7e7e7;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+      font-size: 14px;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .testimonials-note {
+      font-size: 15px;
+      color: #5c5c5c;
+      margin-top: -8px;
+      margin-bottom: 24px;
+      max-width: 860px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-quote-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .testimonial-quote-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.08);
+      border-color: rgba(37,211,102,0.30);
+    }
+
+    .testimonial-quote-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37,211,102,0.10);
+      color: #13743d;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-quote-text {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #222;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-quote-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111111;
+    }
+
     .offer {
       background:
         radial-gradient(circle at top left, rgba(37,211,102,0.15), transparent 28%),
@@ -764,43 +839,6 @@
       display: block;
       font-size: 18px;
       margin-bottom: 8px;
-    }
-
-    .testimonials-placeholder {
-      display: grid;
-      gap: 20px;
-    }
-
-    .testimonial-card {
-      background: #fff;
-      color: #111;
-      border-radius: 20px;
-      padding: 24px;
-      border: 1px dashed #bdbdbd;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
-    }
-
-    .testimonial-name {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .testimonial-photo {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-text {
-      color: #333;
-      font-size: 16px;
     }
 
     .final-cta {
@@ -905,7 +943,8 @@
       .grid-3,
       .grid-2,
       .quick-info,
-      .bonus-grid {
+      .bonus-grid,
+      .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
@@ -982,6 +1021,14 @@
 
       .mockup-body {
         padding: 18px;
+      }
+
+      .testimonial-quote-card {
+        padding: 22px;
+      }
+
+      .testimonial-quote-text {
+        font-size: 16px;
       }
     }
   </style>
@@ -1343,6 +1390,50 @@
     </div>
   </section>
 
+  <section class="section light-section">
+    <div class="container">
+      <h2 class="reveal">O que já estão dizendo sobre esse método</h2>
+      <p class="section-subtitle reveal delay-1">
+        Resultados e percepções reais de quem já aplicou os ajustes nas conversas e no processo comercial.
+      </p>
+
+      <div class="testimonials-band reveal delay-1">
+        <span>+ clareza nas conversas</span>
+        <span>mais segurança para vender</span>
+        <span>ajustes práticos no atendimento</span>
+      </div>
+
+      <p class="testimonials-note reveal delay-2">
+        Esses são depoimentos reais enviados por clientes e parceiros que já aplicaram orientações práticas de comunicação e vendas.
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-quote-card reveal delay-1">
+          <div class="testimonial-quote-icon">“</div>
+          <div class="testimonial-quote-text">
+            Sensacional o conteúdo e a forma como o João aplica.
+            Ele foca na execução de fato e faz o processo parecer simples.
+            Eu já conhecia várias técnicas de vendas, mas não aplicava com objetividade.
+            Com ele, entendi que a venda precisa ter começo, meio e fim, de forma leve, gerando conexão, resolvendo o problema do cliente e fechando a venda.
+            Com o método dele, melhorei muito os meus resultados.
+          </div>
+          <div class="testimonial-quote-name">Filipe Braga</div>
+        </div>
+
+        <div class="testimonial-quote-card reveal delay-2">
+          <div class="testimonial-quote-icon">“</div>
+          <div class="testimonial-quote-text">
+            A consultoria com o João foi excelente para aprimorar minha comunicação e captação de clientes.
+            Ele analisou minhas conversas, esclareceu dúvidas, trouxe ideias práticas e estruturou um script que facilitou muito o contato com clientes em potencial.
+            Outro ponto que fez diferença foi a estratégia de follow-up com clientes antigos.
+            Com a orientação dele, consegui retomar o contato de forma assertiva e resgatar alunos que haviam parado o Pilates.
+          </div>
+          <div class="testimonial-quote-name">Jéssica Ubinski</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section light-section" id="oferta">
     <div class="container">
       <div class="offer reveal">
@@ -1402,29 +1493,6 @@
       <div class="faq-item reveal delay-4">
         <strong>Vou perder o conteúdo se não conseguir assistir tudo?</strong>
         Não. Você terá acesso à gravação das aulas por 30 dias.
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <h2 class="reveal">O que dizem sobre o treinamento</h2>
-      <p class="section-subtitle reveal delay-1">
-        Espaço preparado para inserir depoimentos reais de alunos e clientes.
-      </p>
-
-      <div class="testimonials-placeholder">
-        <div class="testimonial-card reveal delay-1">
-          <div class="testimonial-name">Nome da pessoa</div>
-          <div class="testimonial-photo">Foto opcional</div>
-          <div class="testimonial-text">Depoimento em texto será inserido aqui futuramente.</div>
-        </div>
-
-        <div class="testimonial-card reveal delay-2">
-          <div class="testimonial-name">Nome da pessoa</div>
-          <div class="testimonial-photo">Foto opcional</div>
-          <div class="testimonial-text">Depoimento em texto será inserido aqui futuramente.</div>
-        </div>
       </div>
     </div>
   </section>
