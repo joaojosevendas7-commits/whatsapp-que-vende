@@ -727,31 +727,53 @@
       border-color: rgba(37,211,102,0.30);
     }
 
+    .testimonial-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-photo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #eaeaea;
+      flex-shrink: 0;
+    }
+
+    .testimonial-person {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
     .testimonial-quote-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(37,211,102,0.10);
       color: #13743d;
-      font-size: 28px;
+      font-size: 24px;
       line-height: 1;
-      margin-bottom: 18px;
+      flex-shrink: 0;
     }
 
     .testimonial-quote-text {
       font-size: 17px;
       line-height: 1.75;
       color: #222;
-      margin-bottom: 18px;
     }
 
     .testimonial-quote-name {
       font-size: 17px;
       font-weight: 700;
       color: #111111;
+      line-height: 1.2;
     }
 
     .offer {
@@ -1025,6 +1047,10 @@
 
       .testimonial-quote-card {
         padding: 22px;
+      }
+
+      .testimonial-top {
+        align-items: flex-start;
       }
 
       .testimonial-quote-text {
@@ -1409,7 +1435,14 @@
 
       <div class="testimonials-grid">
         <div class="testimonial-quote-card reveal delay-1">
-          <div class="testimonial-quote-icon">“</div>
+          <div class="testimonial-top">
+            <img class="testimonial-photo" src="481075524_3091938507624943_1043851554419617928_n" alt="Filipe Braga" />
+            <div class="testimonial-person">
+              <div class="testimonial-quote-name">Filipe Braga</div>
+            </div>
+            <div class="testimonial-quote-icon">“</div>
+          </div>
+
           <div class="testimonial-quote-text">
             Sensacional o conteúdo e a forma como o João aplica.
             Ele foca na execução de fato e faz o processo parecer simples.
@@ -1417,18 +1450,23 @@
             Com ele, entendi que a venda precisa ter começo, meio e fim, de forma leve, gerando conexão, resolvendo o problema do cliente e fechando a venda.
             Com o método dele, melhorei muito os meus resultados.
           </div>
-          <div class="testimonial-quote-name">Filipe Braga</div>
         </div>
 
         <div class="testimonial-quote-card reveal delay-2">
-          <div class="testimonial-quote-icon">“</div>
+          <div class="testimonial-top">
+            <img class="testimonial-photo" src="305072826_5523618861062644_806327707443628475_n" alt="Jéssica Ubinski" />
+            <div class="testimonial-person">
+              <div class="testimonial-quote-name">Jéssica Ubinski</div>
+            </div>
+            <div class="testimonial-quote-icon">“</div>
+          </div>
+
           <div class="testimonial-quote-text">
             A consultoria com o João foi excelente para aprimorar minha comunicação e captação de clientes.
             Ele analisou minhas conversas, esclareceu dúvidas, trouxe ideias práticas e estruturou um script que facilitou muito o contato com clientes em potencial.
             Outro ponto que fez diferença foi a estratégia de follow-up com clientes antigos.
             Com a orientação dele, consegui retomar o contato de forma assertiva e resgatar alunos que haviam parado o Pilates.
           </div>
-          <div class="testimonial-quote-name">Jéssica Ubinski</div>
         </div>
       </div>
     </div>
