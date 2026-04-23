@@ -4,31 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsApp que Vende | João Neto</title>
-  <meta name="description" content="Treinamento online e ao vivo para pequenos empreendedores que querem vender mais pelo WhatsApp com prática, diagnóstico e acompanhamento real." />
+
   <style>
     :root {
-      --bg-dark: #0d0d0d;
-      --bg-black: #050505;
-      --bg-light: #f5f5f5;
-      --white: #ffffff;
-      --text: #111111;
       --green: #25D366;
       --green-dark: #1faa52;
-      --card-dark: #141414;
-      --card-light: #ffffff;
-      --gold: #ffd76a;
-      --soft-shadow: 0 12px 28px rgba(0,0,0,0.06);
-      --soft-shadow-dark: 0 18px 40px rgba(0,0,0,0.28);
+      --black: #050505;
+      --dark: #111111;
+      --light: #f5f5f5;
+      --white: #ffffff;
+      --text: #111111;
       --transition: 0.28s ease;
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg-black);
+      background: var(--black);
       color: var(--white);
       line-height: 1.6;
     }
@@ -39,14 +35,13 @@
     }
 
     .container {
-      width: 100%;
       max-width: 1150px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     .topbar {
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.9);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       position: sticky;
       top: 0;
@@ -56,7 +51,6 @@
 
     .topbar-inner {
       display: flex;
-      align-items: center;
       justify-content: center;
       padding: 14px 0;
     }
@@ -71,7 +65,6 @@
         radial-gradient(circle at top right, rgba(37,211,102,0.18), transparent 30%),
         linear-gradient(180deg, #0b0b0b 0%, #111111 100%);
       padding: 70px 0 56px;
-      overflow: hidden;
     }
 
     .hero-grid {
@@ -90,24 +83,33 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: bold;
-      letter-spacing: 0.5px;
       margin-bottom: 20px;
-      transition: transform var(--transition), box-shadow var(--transition);
     }
 
     h1 {
       font-size: 52px;
       line-height: 1.05;
       margin: 0 0 18px;
-      color: var(--white);
       letter-spacing: -0.02em;
     }
 
-    .hero p {
-      font-size: 20px;
-      color: #d8d8d8;
-      margin: 0 0 22px;
-      max-width: 680px;
+    h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .hero p,
+    .section-subtitle {
+      font-size: 19px;
+      max-width: 760px;
+      opacity: 0.88;
     }
 
     .pain-block {
@@ -118,16 +120,7 @@
       padding: 18px 20px;
       color: #f0f0f0;
       font-size: 18px;
-      max-width: 760px;
-      margin-bottom: 24px;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 10px;
+      margin: 24px 0;
     }
 
     .btn {
@@ -137,23 +130,21 @@
       border-radius: 12px;
       padding: 16px 24px;
       font-size: 17px;
-      transition: transform var(--transition), background var(--transition), box-shadow var(--transition), color var(--transition), border-color var(--transition);
       text-align: center;
-      will-change: transform;
+      transition: var(--transition);
     }
 
     .btn-primary {
       background: var(--green);
       color: #04130a;
       box-shadow: 0 10px 24px rgba(37,211,102,0.28);
-      animation: subtlePulse 2.8s ease-in-out infinite;
+      animation: pulse 2.8s ease-in-out infinite;
     }
 
     .btn-primary:hover {
       background: var(--green-dark);
       color: #fff;
       transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 16px 30px rgba(37,211,102,0.34);
     }
 
     .btn-secondary {
@@ -162,29 +153,19 @@
       background: rgba(255,255,255,0.04);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 18px;
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: var(--soft-shadow-dark);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .hero-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 44px rgba(0,0,0,0.34);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
     }
 
     .hero-card img {
@@ -200,7 +181,6 @@
     .hero-card-content strong {
       display: block;
       font-size: 21px;
-      margin-bottom: 6px;
     }
 
     .hero-card-content span {
@@ -222,25 +202,14 @@
       padding: 20px 16px;
       text-align: center;
       color: #d9d9d9;
-      font-size: 15px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 10px 24px rgba(0,0,0,0.18);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .quick-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.26);
-      border-color: rgba(37,211,102,0.35);
-      background: linear-gradient(180deg, #1b1b1b 0%, #121212 100%);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
     .quick-box strong {
       display: block;
       font-size: 28px;
-      line-height: 1;
       color: #ffffff;
-      margin-bottom: 10px;
-      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     .section {
@@ -248,33 +217,18 @@
     }
 
     .light-section {
-      background: var(--bg-light);
+      background: var(--light);
       color: var(--text);
     }
 
     .dark-section {
-      background: var(--bg-black);
+      background: var(--black);
       color: var(--white);
     }
 
     .mid-section {
       background: #111111;
       color: var(--white);
-    }
-
-    h2 {
-      font-size: 38px;
-      line-height: 1.1;
-      margin: 0 0 14px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-subtitle {
-      font-size: 19px;
-      max-width: 760px;
-      margin-bottom: 28px;
-      color: inherit;
-      opacity: 0.85;
     }
 
     .grid-2,
@@ -286,53 +240,29 @@
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-    .card-dark, .card-light {
+    .card-light,
+    .card-dark {
       border-radius: 22px;
       padding: 24px;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .card-dark {
-      background: var(--card-dark);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
+      transition: var(--transition);
     }
 
     .card-light {
-      background: var(--card-light);
-      border: 1px solid #e6e6e6;
+      background: #fff;
       color: #111;
-      box-shadow: var(--soft-shadow);
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
     }
 
-    .card-dark:hover,
-    .card-light:hover {
-      transform: translateY(-4px) scale(1.01);
+    .card-dark {
+      background: #141414;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
+    .card-light:hover,
     .card-dark:hover {
-      box-shadow: 0 22px 36px rgba(0,0,0,0.26);
-      border-color: rgba(37,211,102,0.22);
-    }
-
-    .card-light:hover {
-      box-shadow: 0 18px 32px rgba(0,0,0,0.09);
-      border-color: rgba(37,211,102,0.22);
-    }
-
-    .card-dark h3,
-    .card-light h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      color: inherit;
-    }
-
-    .card-dark p,
-    .card-light p {
-      margin: 0;
-      font-size: 17px;
-      color: inherit;
-      opacity: 0.9;
+      transform: translateY(-4px);
     }
 
     .icon-list {
@@ -341,43 +271,26 @@
       margin-top: 20px;
     }
 
-    .icon-item {
+    .icon-item,
+    .icon-item-dark {
       display: grid;
       grid-template-columns: 52px 1fr;
       gap: 14px;
       align-items: center;
-      background: #fff;
-      border: 1px solid #e7e7e7;
       border-radius: 18px;
       padding: 15px 16px;
+      transition: var(--transition);
+    }
+
+    .icon-item {
+      background: #fff;
+      border: 1px solid #e7e7e7;
       box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
 
     .icon-item-dark {
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 14px;
-      align-items: center;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 16px;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .icon-item:hover,
-    .icon-item-dark:hover {
-      transform: translateY(-3px);
-      border-color: rgba(37,211,102,0.28);
-    }
-
-    .icon-item:hover {
-      box-shadow: 0 14px 24px rgba(0,0,0,0.08);
-    }
-
-    .icon-item-dark:hover {
-      box-shadow: 0 16px 28px rgba(0,0,0,0.2);
     }
 
     .icon-circle {
@@ -388,33 +301,16 @@
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      font-weight: 400;
-      letter-spacing: 0;
-      flex-shrink: 0;
-      transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
     }
 
     .icon-circle.light {
-      background: #111111;
-      color: #ffffff;
+      background: #111;
+      color: #fff;
     }
 
     .icon-circle.dark {
-      background: #ffffff;
-      color: #111111;
-    }
-
-    .icon-item:hover .icon-circle,
-    .icon-item-dark:hover .icon-circle {
-      transform: scale(1.06);
-      box-shadow: 0 10px 20px rgba(37,211,102,0.18);
-    }
-
-    .icon-text strong {
-      display: block;
-      font-size: 17px;
-      margin-bottom: 2px;
-      color: inherit;
+      background: #fff;
+      color: #111;
     }
 
     .icon-text span {
@@ -422,62 +318,8 @@
       color: #555;
     }
 
-    .icon-item-dark .icon-text strong {
-      color: #ffffff;
-    }
-
     .icon-item-dark .icon-text span {
       color: #d6d6d6;
-    }
-
-    .process-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .process-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: var(--green);
-      border-radius: 22px 0 0 22px;
-    }
-
-    .result-box {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: #fff;
-      padding: 28px;
-      border-radius: 24px;
-      font-size: 24px;
-      font-weight: bold;
-      box-shadow: 0 16px 36px rgba(18,140,126,0.28);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .result-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 22px 40px rgba(18,140,126,0.34);
-    }
-
-    .authority {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .authority img {
-      width: 100%;
-      border-radius: 24px;
-      object-fit: cover;
-      box-shadow: 0 18px 36px rgba(0,0,0,0.25);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .authority img:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 42px rgba(0,0,0,0.3);
     }
 
     .image-block {
@@ -494,6 +336,26 @@
       object-fit: cover;
     }
 
+    .result-box {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #fff;
+      padding: 28px;
+      border-radius: 24px;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 16px 36px rgba(18,140,126,0.28);
+    }
+
+    .teacher-box {
+      background: #fff;
+      color: #111;
+      border-radius: 24px;
+      padding: 34px;
+      border: 1px solid #e7e7e7;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      max-width: 860px;
+    }
+
     .bonus-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -506,32 +368,17 @@
       grid-template-columns: 54px 1fr;
       gap: 14px;
       align-items: start;
-      background: var(--card-dark);
+      background: #141414;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 22px;
       padding: 24px;
       color: #fff;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
 
-    .bonus-card:hover {
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 22px 36px rgba(0,0,0,0.26);
-      border-color: rgba(37,211,102,0.22);
-    }
-
-    .bonus-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 20px;
-      color: inherit;
-    }
-
-    .bonus-card p {
-      margin: 0;
-      font-size: 16px;
-      color: inherit;
-      opacity: 0.82;
+    .main-bonus {
+      background: linear-gradient(135deg, #fff7da 0%, #eefaf1 100%);
+      border: 2px solid #f0cf68;
+      color: #111;
     }
 
     .bonus-icon {
@@ -539,36 +386,11 @@
       height: 52px;
       border-radius: 16px;
       background: #1a1a1a;
-      color: #ffffff;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.03em;
-      margin-top: 2px;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-    }
-
-    .bonus-card:hover .bonus-icon {
-      transform: scale(1.06);
-      box-shadow: 0 10px 20px rgba(37,211,102,0.16);
-    }
-
-    .main-bonus {
-      background: linear-gradient(135deg, #fff7da 0%, #eefaf1 100%);
-      border: 2px solid #f0cf68;
-      box-shadow: 0 18px 36px rgba(0,0,0,0.10);
-      color: #111111;
-    }
-
-    .main-bonus strong,
-    .main-bonus p {
-      color: #111111;
-    }
-
-    .main-bonus p {
-      opacity: 0.82;
     }
 
     .main-bonus .bonus-icon {
@@ -588,13 +410,6 @@
       border-radius: 22px;
       padding: 26px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .testimonial-quote-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(0,0,0,0.08);
-      border-color: rgba(37,211,102,0.30);
     }
 
     .testimonial-top {
@@ -610,13 +425,6 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #eaeaea;
-      flex-shrink: 0;
-    }
-
-    .testimonial-person {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
     }
 
     .testimonial-quote-icon {
@@ -629,8 +437,7 @@
       background: rgba(37,211,102,0.10);
       color: #13743d;
       font-size: 24px;
-      line-height: 1;
-      flex-shrink: 0;
+      margin-left: auto;
     }
 
     .testimonial-quote-text {
@@ -642,7 +449,7 @@
     .testimonial-quote-name {
       font-size: 17px;
       font-weight: 700;
-      color: #111111;
+      color: #111;
     }
 
     .offer {
@@ -653,19 +460,11 @@
       border-radius: 28px;
       padding: 36px;
       box-shadow: 0 24px 46px rgba(0,0,0,0.28);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .offer:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 28px 50px rgba(0,0,0,0.34);
     }
 
     .offer h3 {
-      margin: 0 0 12px;
       font-size: 34px;
-      color: #ffffff;
-      letter-spacing: -0.02em;
+      color: #fff;
     }
 
     .offer-line {
@@ -674,11 +473,10 @@
       margin-bottom: 8px;
     }
 
-    .scarcity-note {
-      margin-top: 10px;
-      font-size: 16px;
+    .scarcity-note,
+    .safety-line {
       color: #d0d0d0;
-      max-width: 700px;
+      font-size: 16px;
     }
 
     .price-box {
@@ -688,13 +486,6 @@
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 22px;
       padding: 24px;
-      box-shadow: 0 16px 30px rgba(0,0,0,0.20);
-    }
-
-    .price {
-      color: #d5d5d5;
-      font-size: 18px;
-      margin: 0;
     }
 
     .old-price {
@@ -702,6 +493,7 @@
       opacity: 0.7;
       display: block;
       margin-bottom: 8px;
+      color: #d5d5d5;
     }
 
     .price-label {
@@ -716,22 +508,7 @@
       font-size: 56px;
       line-height: 1;
       color: #fff;
-      margin-top: 4px;
       font-weight: bold;
-    }
-
-    .offer small {
-      display: block;
-      color: #c7c7c7;
-      margin-top: 8px;
-      font-size: 15px;
-    }
-
-    .safety-line {
-      font-size: 16px;
-      color: #dcdcdc;
-      margin-top: 20px;
-      margin-bottom: 18px;
     }
 
     .faq-item {
@@ -742,27 +519,10 @@
       border: 1px solid #e8e8e8;
       box-shadow: 0 10px 24px rgba(0,0,0,0.05);
       margin-bottom: 14px;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .faq-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
-      border-color: rgba(37,211,102,0.25);
-    }
-
-    .faq-item strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 8px;
     }
 
     .final-cta {
       text-align: center;
-    }
-
-    .final-cta .btn {
-      min-width: 280px;
     }
 
     .footer {
@@ -788,30 +548,20 @@
       border-radius: 999px;
       padding: 14px 18px;
       box-shadow: 0 16px 28px rgba(37,211,102,0.35);
-      animation: floatIn 0.5s ease-out, subtlePulse 2.6s ease-in-out infinite 0.8s;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
       font-weight: 700;
       font-size: 15px;
-    }
-
-    .floating-whatsapp:hover {
-      transform: scale(1.06);
-      background: var(--green-dark);
-      box-shadow: 0 20px 34px rgba(37,211,102,0.42);
     }
 
     .floating-whatsapp svg {
       width: 24px;
       height: 24px;
       fill: #ffffff;
-      flex-shrink: 0;
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
-      will-change: opacity, transform;
     }
 
     .reveal.visible {
@@ -819,66 +569,23 @@
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: 0.05s; }
-    .delay-2 { transition-delay: 0.1s; }
-    .delay-3 { transition-delay: 0.15s; }
-    .delay-4 { transition-delay: 0.2s; }
-    .delay-5 { transition-delay: 0.25s; }
-
-    @keyframes subtlePulse {
+    @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.02); }
     }
 
-    @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.92);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-
     @media (max-width: 980px) {
       .hero-grid,
-      .authority,
-      .grid-3,
       .grid-2,
+      .grid-3,
       .quick-info,
       .bonus-grid,
       .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 40px;
-      }
-
-      h2 {
-        font-size: 32px;
-      }
-
-      .hero p,
-      .section-subtitle {
-        font-size: 18px;
-      }
+      h1 { font-size: 40px; }
+      h2 { font-size: 32px; }
 
       .hero-side {
         order: -1;
@@ -886,581 +593,300 @@
     }
 
     @media (max-width: 640px) {
-      .hero {
-        padding: 46px 0 34px;
-      }
-
-      h1 {
-        font-size: 33px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .offer {
-        padding: 26px;
-      }
-
-      .new-price {
-        font-size: 44px;
-      }
+      .hero { padding: 46px 0 34px; }
+      h1 { font-size: 33px; }
+      .btn { width: 100%; }
+      .new-price { font-size: 44px; }
 
       .floating-whatsapp {
         right: 12px;
         bottom: 12px;
         padding: 12px 14px;
-        font-size: 14px;
       }
 
       .floating-whatsapp span {
         display: none;
       }
-
-      .icon-item,
-      .icon-item-dark,
-      .bonus-card {
-        grid-template-columns: 46px 1fr;
-        gap: 12px;
-      }
-
-      .icon-circle,
-      .bonus-icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-      }
-
-      .icon-circle {
-        font-size: 22px;
-      }
-
-      .bonus-icon {
-        font-size: 13px;
-      }
-
-      .testimonial-quote-card {
-        padding: 22px;
-      }
-
-      .testimonial-top {
-        align-items: flex-start;
-      }
-
-      .testimonial-quote-text {
-        font-size: 16px;
-      }
     }
   </style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <img src="IMG_1168.PNG" alt="Desatar Consultoria Comercial" />
-    </div>
-  </header>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <img src="IMG_1168.PNG" alt="Desatar Consultoria Comercial" />
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="badge reveal">TREINAMENTO ONLINE E AO VIVO</div>
-          <h1 class="reveal delay-1">Seu WhatsApp está cheio de conversas… mas poucas viram clientes?</h1>
-          <p class="reveal delay-2">
-            Em apenas 2 dias, aprenda como transformar conversas em vendas com um método simples, prático e aplicável no mesmo dia.
-          </p>
-
-          <div class="pain-block reveal delay-3">
-            Se você sente que está falando com pessoas interessadas, mas mesmo assim não consegue fechar vendas, o problema pode não ser o cliente.<br><br>
-            O problema está na forma como você conduz a conversa.
-          </div>
-
-          <div class="cta-row reveal delay-4">
-            <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">
-              Quero garantir minha vaga por R$97
-            </a>
-            <a class="btn btn-secondary" href="#oferta">Ver detalhes da turma</a>
-          </div>
-
-          <div class="quick-info">
-            <div class="quick-box reveal delay-1">
-              <strong>18 e 19</strong>
-              Maio
-            </div>
-            <div class="quick-box reveal delay-2">
-              <strong>19h30</strong>
-              às 21h30
-            </div>
-            <div class="quick-box reveal delay-3">
-              <strong>Google Meet</strong>
-              ao vivo
-            </div>
-            <div class="quick-box reveal delay-4">
-              <strong>12 vagas</strong>
-              disponíveis
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="hero-card reveal delay-2">
-            <img src="DSC_1555-2.jpg" alt="João Neto" />
-            <div class="hero-card-content">
-              <strong>João Neto</strong>
-              <span>Desatar Consultoria Comercial</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-block reveal delay-4">
-        <img src="IMAGEM 6 olhando para o celular.jpg" alt="João olhando para o celular" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <h2 class="reveal">Veja o que já aconteceu com quem aplicou esse método</h2>
-      <p class="section-subtitle reveal delay-1">
-        Resultados e percepções reais de quem já aplicou ajustes nas conversas e no processo comercial.
-      </p>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-quote-card reveal delay-1">
-          <div class="testimonial-top">
-            <img class="testimonial-photo" src="481075524_3091938507624943_1043851554419617928_n.jpg" alt="Filipe Braga" />
-            <div class="testimonial-person">
-              <div class="testimonial-quote-name">Filipe Braga</div>
-            </div>
-            <div class="testimonial-quote-icon">“</div>
-          </div>
-
-          <div class="testimonial-quote-text">
-            Sensacional o conteúdo e a forma como o João aplica.
-            Ele foca na execução de fato e faz o processo parecer simples.
-            Eu já conhecia várias técnicas de vendas, mas não aplicava com objetividade.
-            Com ele, entendi que a venda precisa ter começo, meio e fim, de forma leve, gerando conexão, resolvendo o problema do cliente e fechando a venda.
-            Com o método dele, melhorei muito os meus resultados.
-          </div>
-        </div>
-
-        <div class="testimonial-quote-card reveal delay-2">
-          <div class="testimonial-top">
-            <img class="testimonial-photo" src="305072826_5523618861062644_806327707443628475_n.jpg" alt="Jéssica Ubinski" />
-            <div class="testimonial-person">
-              <div class="testimonial-quote-name">Jéssica Ubinski</div>
-            </div>
-            <div class="testimonial-quote-icon">“</div>
-          </div>
-
-          <div class="testimonial-quote-text">
-            A consultoria com o João foi excelente para aprimorar minha comunicação e captação de clientes.
-            Ele analisou minhas conversas, esclareceu dúvidas, trouxe ideias práticas e estruturou um script que facilitou muito o contato com clientes em potencial.
-            Outro ponto que fez diferença foi a estratégia de follow-up com clientes antigos.
-            Com a orientação dele, consegui retomar o contato de forma assertiva e resgatar alunos que haviam parado o Pilates.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <h2 class="reveal">Esse treinamento é para você que</h2>
-      <p class="section-subtitle reveal delay-1">
-        trabalha muito, responde clientes todos os dias, mas sente que está perdendo vendas por não saber exatamente como conduzir a conversa.
-      </p>
-
-      <div class="grid-2">
-        <div class="icon-list">
-          <div class="icon-item reveal delay-1">
-            <div class="icon-circle light">💬</div>
-            <div class="icon-text">
-              <strong>Conversa com clientes no WhatsApp</strong>
-              <span>Mas sente que poucas conversas realmente avançam.</span>
-            </div>
-          </div>
-
-          <div class="icon-item reveal delay-2">
-            <div class="icon-circle light">👻</div>
-            <div class="icon-text">
-              <strong>Vê cliente sumir</strong>
-              <span>Mesmo depois de demonstrar interesse.</span>
-            </div>
-          </div>
-
-          <div class="icon-item reveal delay-3">
-            <div class="icon-circle light">🔒</div>
-            <div class="icon-text">
-              <strong>Tem dificuldade de fechar</strong>
-              <span>Chega até certo ponto da conversa e trava.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="icon-list">
-          <div class="icon-item reveal delay-2">
-            <div class="icon-circle light">💵</div>
-            <div class="icon-text">
-              <strong>Não sabe apresentar preço</strong>
-              <span>Tem receio de falar valor.</span>
-            </div>
-          </div>
-
-          <div class="icon-item reveal delay-3">
-            <div class="icon-circle light">📈</div>
-            <div class="icon-text">
-              <strong>Quer vender mais</strong>
-              <span>Usando melhor o WhatsApp.</span>
-            </div>
-          </div>
-
-          <div class="icon-item reveal delay-4">
-            <div class="icon-circle light">⚡</div>
-            <div class="icon-text">
-              <strong>Quer algo prático</strong>
-              <span>Sem teoria cansativa.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-block reveal delay-4">
-        <img src="IMAGEM 2 Pessoa pensativa com celular.jpg" alt="Pessoa pensativa com celular" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark-section">
-    <div class="container">
-      <h2 class="reveal">Você pode estar perdendo vendas sem perceber</h2>
-      <p class="section-subtitle reveal delay-1">
-        Enquanto você não ajusta isso, provavelmente está:
-      </p>
-
-      <div class="grid-2">
-        <div class="icon-list">
-          <div class="icon-item-dark reveal delay-1">
-            <div class="icon-circle dark">🧲</div>
-            <div class="icon-text">
-              <strong>Perdendo clientes interessados</strong>
-              <span>Gente que já estava quase comprando.</span>
-            </div>
-          </div>
-
-          <div class="icon-item-dark reveal delay-2">
-            <div class="icon-circle dark">💸</div>
-            <div class="icon-text">
-              <strong>Deixando dinheiro na mesa</strong>
-              <span>Todos os dias.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="icon-list">
-          <div class="icon-item-dark reveal delay-3">
-            <div class="icon-circle dark">🔄</div>
-            <div class="icon-text">
-              <strong>Tendo conversas que não evoluem</strong>
-              <span>Você responde, mas a venda não anda.</span>
-            </div>
-          </div>
-
-          <div class="icon-item-dark reveal delay-4">
-            <div class="icon-circle dark">🎯</div>
-            <div class="icon-text">
-              <strong>Errando sem perceber</strong>
-              <span>Sem saber exatamente onde.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <div class="image-block reveal">
-        <img src="IMAGEM 1 Conversa fluindo no celular.jpg" alt="Conversa fluindo no celular" />
-      </div>
-
-      <h2 class="reveal delay-1" style="margin-top:34px;">Como funciona na prática</h2>
-      <p class="section-subtitle reveal delay-2">
-        Você não entra em um curso genérico. O treinamento foi pensado para mexer no que realmente trava suas vendas.
-      </p>
-
-      <div class="grid-3">
-        <div class="card-light process-card reveal delay-1">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">01</div>
-            <div>
-              <h3>Diagnóstico antes</h3>
-              <p>Você envia prints reais e eu analiso onde você está perdendo vendas.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-light process-card reveal delay-2">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">02</div>
-            <div>
-              <h3>Ajuste ao vivo</h3>
-              <p>Durante o treinamento, mostramos exatamente o que falar, como responder e como conduzir a conversa.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-light process-card reveal delay-3">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">03</div>
-            <div>
-              <h3>Acompanhamento depois</h3>
-              <p>Você aplica com suporte por 15 dias para corrigir e melhorar na prática.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section mid-section">
-    <div class="container">
-      <h2 class="reveal">Resultado que importa é venda</h2>
-      <div class="result-box reveal delay-1">
-        Já tive cliente que começou a fechar mais vendas em poucos dias apenas ajustando a forma de conversar no WhatsApp.
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <h2 class="reveal">O que você vai aprender</h2>
-      <p class="section-subtitle reveal delay-1">
-        O foco não é teoria bonita. O foco é fazer você conversar melhor, responder melhor e vender mais.
-      </p>
-
-      <div class="grid-3">
-        <div class="card-light reveal delay-1">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">A</div>
-            <div>
-              <h3>Como iniciar conversas</h3>
-              <p>Aprenda a abrir conversas que despertam interesse e fazem o cliente continuar respondendo.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-light reveal delay-2">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">B</div>
-            <div>
-              <h3>Como conduzir vendas</h3>
-              <p>Saiba como responder sem parecer insistente e levar a conversa de forma natural até o fechamento.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-light reveal delay-3">
-          <div class="bonus-card" style="background:none;border:none;box-shadow:none;padding:0;color:#111;">
-            <div class="bonus-icon" style="background: rgba(17,17,17,0.08); color: #111111;">C</div>
-            <div>
-              <h3>Como apresentar preço</h3>
-              <p>Descubra como mostrar valor e reduzir o medo de perder o cliente na hora do preço.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container authority">
-      <div class="reveal delay-1">
-      </div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
       <div>
-        <h2 class="reveal">Quem vai te ensinar</h2>
-        <p class="section-subtitle reveal delay-1" style="margin-bottom:0;">
-          <strong>João Neto</strong><br><br>
-          Sou profissional com mais de 13 anos de experiência em comunicação e vendas.<br><br>
-          Ao longo desses anos, acompanhei de perto o que faz uma conversa virar venda e o que faz o cliente desistir.<br><br>
-          Hoje ajudo pequenos empreendedores a ajustar a forma de conversar com clientes e transformar mensagens comuns em vendas reais.
+        <div class="badge reveal">TREINAMENTO ONLINE E AO VIVO</div>
+        <h1 class="reveal">Seu WhatsApp está cheio de conversas… mas poucas viram clientes?</h1>
+        <p class="reveal">
+          Em apenas 2 dias, aprenda como transformar conversas em vendas com um método simples, prático e aplicável no mesmo dia.
         </p>
+
+        <div class="pain-block reveal">
+          Se você sente que está falando com pessoas interessadas, mas mesmo assim não consegue fechar vendas, o problema pode não ser o cliente.<br><br>
+          O problema está na forma como você conduz a conversa.
+        </div>
+
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">Quero garantir minha vaga por R$97</a>
+          <a class="btn btn-secondary" href="#oferta">Ver detalhes da turma</a>
+        </div>
+
+        <div class="quick-info">
+          <div class="quick-box reveal"><strong>18 e 19</strong>Maio</div>
+          <div class="quick-box reveal"><strong>19h30</strong>às 21h30</div>
+          <div class="quick-box reveal"><strong>Google Meet</strong>ao vivo</div>
+          <div class="quick-box reveal"><strong>12 vagas</strong>disponíveis</div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <img src="DSC_1555-2.jpg" alt="João Neto" />
+        <div class="hero-card-content">
+          <strong>João Neto</strong>
+          <span>Desatar Consultoria Comercial</span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section light-section">
-    <div class="container">
-      <div class="image-block reveal">
-        <img src="IMAGEM 4 Pessoa estudando no notebook.jpg" alt="Pessoa estudando no notebook" />
+    <div class="image-block reveal">
+      <img src="IMAGEM 6 olhando para o celular.jpg" alt="João olhando para o celular" />
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <h2 class="reveal">Veja o que já aconteceu com quem aplicou esse método</h2>
+    <p class="section-subtitle reveal">Resultados e percepções reais de quem já aplicou ajustes nas conversas e no processo comercial.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-quote-card reveal">
+        <div class="testimonial-top">
+          <img class="testimonial-photo" src="481075524_3091938507624943_1043851554419617928_n.jpg" alt="Filipe Braga" />
+          <div class="testimonial-quote-name">Filipe Braga</div>
+          <div class="testimonial-quote-icon">“</div>
+        </div>
+        <div class="testimonial-quote-text">
+          Sensacional o conteúdo e a forma como o João aplica. Ele foca na execução de fato e faz o processo parecer simples. Com ele, entendi que a venda precisa ter começo, meio e fim, de forma leve, gerando conexão, resolvendo o problema do cliente e fechando a venda. Com o método dele, melhorei muito os meus resultados.
+        </div>
       </div>
 
-      <h2 class="reveal delay-1" style="margin-top:34px;">Bônus exclusivos para esta turma</h2>
-      <p class="section-subtitle reveal delay-2">
-        Ferramentas práticas que vão acelerar seus resultados.
+      <div class="testimonial-quote-card reveal">
+        <div class="testimonial-top">
+          <img class="testimonial-photo" src="305072826_5523618861062644_806327707443628475_n.jpg" alt="Jéssica Ubinski" />
+          <div class="testimonial-quote-name">Jéssica Ubinski</div>
+          <div class="testimonial-quote-icon">“</div>
+        </div>
+        <div class="testimonial-quote-text">
+          A consultoria com o João foi excelente para aprimorar minha comunicação e captação de clientes. Ele analisou minhas conversas, esclareceu dúvidas, trouxe ideias práticas e estruturou um script que facilitou muito o contato com clientes em potencial. Com a orientação dele, consegui resgatar alunos que haviam parado o Pilates.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <h2 class="reveal">Esse treinamento é para você que</h2>
+    <p class="section-subtitle reveal">Trabalha muito, responde clientes todos os dias, mas sente que está perdendo vendas por não saber exatamente como conduzir a conversa.</p>
+
+    <div class="grid-2">
+      <div class="icon-list">
+        <div class="icon-item reveal"><div class="icon-circle light">💬</div><div><strong>Conversa com clientes no WhatsApp</strong><br><span>Mas sente que poucas conversas realmente avançam.</span></div></div>
+        <div class="icon-item reveal"><div class="icon-circle light">👻</div><div><strong>Vê cliente sumir</strong><br><span>Mesmo depois de demonstrar interesse.</span></div></div>
+        <div class="icon-item reveal"><div class="icon-circle light">🔒</div><div><strong>Tem dificuldade de fechar</strong><br><span>Chega até certo ponto da conversa e trava.</span></div></div>
+      </div>
+
+      <div class="icon-list">
+        <div class="icon-item reveal"><div class="icon-circle light">💵</div><div><strong>Não sabe apresentar preço</strong><br><span>Tem receio de falar valor.</span></div></div>
+        <div class="icon-item reveal"><div class="icon-circle light">📈</div><div><strong>Quer vender mais</strong><br><span>Usando melhor o WhatsApp.</span></div></div>
+        <div class="icon-item reveal"><div class="icon-circle light">⚡</div><div><strong>Quer algo prático</strong><br><span>Sem teoria cansativa.</span></div></div>
+      </div>
+    </div>
+
+    <div class="image-block reveal">
+      <img src="IMAGEM 2 Pessoa pensativa com celular.jpg" alt="Pessoa pensativa com celular" />
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section">
+  <div class="container">
+    <h2 class="reveal">Você pode estar perdendo vendas sem perceber</h2>
+    <p class="section-subtitle reveal">Enquanto você não ajusta isso, provavelmente está:</p>
+
+    <div class="grid-2">
+      <div class="icon-list">
+        <div class="icon-item-dark reveal"><div class="icon-circle dark">🧲</div><div><strong>Perdendo clientes interessados</strong><br><span>Gente que já estava quase comprando.</span></div></div>
+        <div class="icon-item-dark reveal"><div class="icon-circle dark">💸</div><div><strong>Deixando dinheiro na mesa</strong><br><span>Todos os dias.</span></div></div>
+      </div>
+      <div class="icon-list">
+        <div class="icon-item-dark reveal"><div class="icon-circle dark">🔄</div><div><strong>Tendo conversas que não evoluem</strong><br><span>Você responde, mas a venda não anda.</span></div></div>
+        <div class="icon-item-dark reveal"><div class="icon-circle dark">🎯</div><div><strong>Errando sem perceber</strong><br><span>Sem saber exatamente onde.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <div class="image-block reveal">
+      <img src="IMAGEM 1 Conversa fluindo no celular.jpg" alt="Conversa fluindo no celular" />
+    </div>
+
+    <h2 style="margin-top:34px;" class="reveal">Como funciona na prática</h2>
+    <p class="section-subtitle reveal">Você não entra em um curso genérico. O treinamento foi pensado para mexer no que realmente trava suas vendas.</p>
+
+    <div class="grid-3">
+      <div class="card-light reveal"><h3>01. Diagnóstico antes</h3><p>Você envia prints reais e eu analiso onde você está perdendo vendas.</p></div>
+      <div class="card-light reveal"><h3>02. Ajuste ao vivo</h3><p>Mostramos exatamente o que falar, como responder e como conduzir a conversa.</p></div>
+      <div class="card-light reveal"><h3>03. Acompanhamento depois</h3><p>Você aplica com suporte por 15 dias para corrigir e melhorar na prática.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section mid-section">
+  <div class="container">
+    <h2 class="reveal">Resultado que importa é venda</h2>
+    <div class="result-box reveal">
+      Já tive cliente que começou a fechar mais vendas em poucos dias apenas ajustando a forma de conversar no WhatsApp.
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <h2 class="reveal">O que você vai aprender</h2>
+    <p class="section-subtitle reveal">O foco não é teoria bonita. O foco é fazer você conversar melhor, responder melhor e vender mais.</p>
+
+    <div class="grid-3">
+      <div class="card-light reveal"><h3>Como iniciar conversas</h3><p>Aprenda a abrir conversas que despertam interesse.</p></div>
+      <div class="card-light reveal"><h3>Como conduzir vendas</h3><p>Leve a conversa de forma natural até o fechamento.</p></div>
+      <div class="card-light reveal"><h3>Como apresentar preço</h3><p>Mostre valor e reduza o medo de perder o cliente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <div class="teacher-box reveal">
+      <h2>Quem vai te ensinar</h2>
+      <p class="section-subtitle">
+        <strong>João Neto</strong><br><br>
+        Sou profissional com mais de 13 anos de experiência em comunicação e vendas.<br><br>
+        Ao longo desses anos, acompanhei de perto o que faz uma conversa virar venda e o que faz o cliente desistir.<br><br>
+        Hoje ajudo pequenos empreendedores a ajustar a forma de conversar com clientes e transformar mensagens comuns em vendas reais.
       </p>
+    </div>
+  </div>
+</section>
 
-      <div class="bonus-grid">
-        <div class="bonus-card main-bonus reveal delay-1">
-          <div class="bonus-icon">01</div>
-          <div>
-            <strong>Análise personalizada das suas conversas</strong>
-            <p>Você envia suas conversas reais e recebe ajustes específicos para o seu caso.</p>
-          </div>
-        </div>
+<section class="section light-section">
+  <div class="container">
+    <div class="image-block reveal">
+      <img src="IMAGEM 4 Pessoa estudando no notebook.jpg" alt="Pessoa estudando no notebook" />
+    </div>
 
-        <div class="bonus-card reveal delay-2">
-          <div class="bonus-icon">02</div>
-          <div>
-            <strong>Guia de funcionalidades do WhatsApp Business</strong>
-            <p>Descubra recursos que podem facilitar e acelerar suas vendas.</p>
-          </div>
-        </div>
+    <h2 style="margin-top:34px;" class="reveal">Bônus exclusivos para esta turma</h2>
+    <p class="section-subtitle reveal">Ferramentas práticas que vão acelerar seus resultados.</p>
 
-        <div class="bonus-card reveal delay-3">
-          <div class="bonus-icon">03</div>
-          <div>
-            <strong>Scripts prontos para copiar e adaptar</strong>
-            <p>Frases prontas para iniciar e conduzir conversas.</p>
-          </div>
-        </div>
+    <div class="bonus-grid">
+      <div class="bonus-card main-bonus reveal"><div class="bonus-icon">01</div><div><strong>Análise personalizada das suas conversas</strong><p>Você envia suas conversas reais e recebe ajustes específicos.</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-icon">02</div><div><strong>Guia do WhatsApp Business</strong><p>Recursos para facilitar e acelerar suas vendas.</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-icon">03</div><div><strong>Scripts prontos</strong><p>Frases para iniciar e conduzir conversas.</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-icon">04</div><div><strong>Suporte por 15 dias</strong><p>Tire dúvidas e ajuste suas conversas.</p></div></div>
+      <div class="bonus-card reveal"><div class="bonus-icon">05</div><div><strong>Gravação por 30 dias</strong><p>Revise quantas vezes precisar.</p></div></div>
+    </div>
+  </div>
+</section>
 
-        <div class="bonus-card reveal delay-4">
-          <div class="bonus-icon">04</div>
-          <div>
-            <strong>Suporte no grupo por 15 dias</strong>
-            <p>Tire dúvidas e ajuste suas conversas.</p>
-          </div>
-        </div>
+<section class="section light-section" id="oferta">
+  <div class="container">
+    <div class="image-block reveal">
+      <img src="IMAGEM 3 Conversa fluindo no celular.jpg" alt="Conversa fluindo no celular" />
+    </div>
 
-        <div class="bonus-card reveal delay-5">
-          <div class="bonus-icon">05</div>
-          <div>
-            <strong>Acesso à gravação por 30 dias</strong>
-            <p>Revise quantas vezes precisar.</p>
-          </div>
-        </div>
+    <div class="offer reveal" style="margin-top:34px;">
+      <h3>Nova turma aberta</h3>
+      <div class="offer-line">📅 Dias 18 e 19 de Maio</div>
+      <div class="offer-line">⚠️ Apenas 12 vagas disponíveis</div>
+      <div class="offer-line">Ao vivo pelo Google Meet</div>
+
+      <div class="price-box">
+        <span class="old-price">De R$197,00</span>
+        <span class="price-label">por apenas</span>
+        <span class="new-price">R$97,00</span>
+      </div>
+
+      <div class="safety-line">Treinamento simples, prático e direto ao ponto.</div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">Quero entrar na turma agora</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section light-section" id="oferta">
-    <div class="container">
-      <div class="image-block reveal">
-        <img src="IMAGEM 3 Conversa fluindo no celular.jpg" alt="Conversa fluindo no celular" />
-      </div>
+<section class="section dark-section">
+  <div class="container">
+    <h2 class="reveal">Garantia de 7 dias</h2>
+    <p class="section-subtitle reveal">
+      Se você participar do treinamento e sentir que ele não te ajudou a melhorar suas conversas, é só avisar em até 7 dias que eu devolvo 100% do seu dinheiro.
+    </p>
+  </div>
+</section>
 
-      <div class="offer reveal" style="margin-top:34px;">
-        <h3>Nova turma aberta</h3>
-        <div class="offer-line">📅 Dias 18 e 19 de Maio</div>
-        <div class="offer-line">⚠️ Apenas 12 vagas disponíveis</div>
-        <div class="offer-line">Ao vivo pelo Google Meet</div>
-        <div class="scarcity-note">
-          As vagas são limitadas porque acompanho os participantes de forma próxima durante o treinamento.
-        </div>
+<section class="section light-section">
+  <div class="container">
+    <h2 class="reveal">Perguntas rápidas</h2>
 
-        <div class="price-box">
-          <div class="price">
-            <span class="old-price">De R$197,00</span>
-            <span class="price-label">por apenas</span>
-            <span class="new-price">R$97,00</span>
-          </div>
-        </div>
+    <div class="faq-item reveal"><strong>Esse treinamento serve para quem nunca estudou vendas?</strong> Sim. Ele foi pensado para pequenos empreendedores e vendedores que querem algo prático.</div>
+    <div class="faq-item reveal"><strong>É só para quem usa WhatsApp para vender?</strong> Sim. O foco é melhorar sua comunicação comercial dentro do WhatsApp.</div>
+    <div class="faq-item reveal"><strong>Vou poder tirar dúvidas ao vivo?</strong> Sim. Durante as aulas você poderá perguntar e ajustar para sua realidade.</div>
+    <div class="faq-item reveal"><strong>Vou perder o conteúdo se não conseguir assistir tudo?</strong> Não. Você terá acesso à gravação por 30 dias.</div>
+  </div>
+</section>
 
-        <small>Pagamento único. Sem mensalidade.</small>
+<section class="section dark-section final-cta">
+  <div class="container">
+    <h2 class="reveal">Seu problema pode não ser falta de esforço</h2>
+    <p class="section-subtitle reveal" style="margin-left:auto; margin-right:auto;">
+      Muitas vezes você já fala com pessoas interessadas. O que falta é ajustar a forma como conduz a conversa.
+    </p>
+    <a class="btn btn-primary reveal" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">Quero garantir minha vaga por R$97</a>
+  </div>
+</section>
 
-        <div class="safety-line">
-          Treinamento simples, prático e direto ao ponto.
-        </div>
+<footer class="footer">
+  <div class="container">João Neto | Desatar Consultoria Comercial</div>
+</footer>
 
-        <div class="cta-row" style="margin-top:18px;">
-          <a class="btn btn-primary" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">
-            Quero entrar na turma agora
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+<a class="floating-whatsapp" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">
+  <svg viewBox="0 0 32 32"><path d="M19.11 17.33c-.29-.14-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.14-.19.29-.73.94-.89 1.13-.17.19-.33.21-.62.07-.29-.14-1.2-.44-2.29-1.39-.85-.76-1.43-1.69-1.6-1.97-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.43.9 1.43 2.57 3.56 6.21 4.99.87.38 1.55.6 2.08.76.87.28 1.66.24 2.29.15.7-.1 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.12-.26-.19-.55-.33zM16.02 3.2c-7.03 0-12.72 5.69-12.72 12.71 0 2.24.58 4.42 1.69 6.34L3 29l6.95-1.82a12.67 12.67 0 0 0 6.07 1.55h.01c7.02 0 12.71-5.69 12.71-12.72 0-3.4-1.32-6.59-3.73-8.99A12.63 12.63 0 0 0 16.02 3.2z"/></svg>
+  <span>Quero entrar na turma</span>
+</a>
 
-  <section class="section dark-section">
-    <div class="container">
-      <h2 class="reveal">Garantia de 7 dias</h2>
-      <p class="section-subtitle reveal delay-1">
-        Se você participar do treinamento e sentir que ele não te ajudou a melhorar suas conversas, é só avisar em até 7 dias que eu devolvo 100% do seu dinheiro.
-      </p>
-    </div>
-  </section>
-
-  <section class="section light-section">
-    <div class="container">
-      <h2 class="reveal">Perguntas rápidas</h2>
-
-      <div class="faq-item reveal delay-1">
-        <strong>Esse treinamento serve para quem nunca estudou vendas?</strong>
-        Sim. Ele foi pensado para pequenos empreendedores e vendedores que querem algo prático e fácil de aplicar.
-      </div>
-
-      <div class="faq-item reveal delay-2">
-        <strong>É só para quem usa WhatsApp para vender?</strong>
-        Sim. O foco do treinamento é melhorar sua comunicação comercial dentro do WhatsApp.
-      </div>
-
-      <div class="faq-item reveal delay-3">
-        <strong>Vou poder tirar dúvidas ao vivo?</strong>
-        Sim. Durante as aulas você pode perguntar e ajustar o conteúdo para a sua realidade.
-      </div>
-
-      <div class="faq-item reveal delay-4">
-        <strong>Vou perder o conteúdo se não conseguir assistir tudo?</strong>
-        Não. Você terá acesso à gravação das aulas por 30 dias.
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark-section final-cta">
-    <div class="container">
-      <h2 class="reveal">Seu problema pode não ser falta de esforço</h2>
-      <p class="section-subtitle reveal delay-1" style="margin-left:auto; margin-right:auto;">
-        Muitas vezes você já fala com pessoas interessadas. O que falta é ajustar a forma como conduz a conversa.
-      </p>
-      <a class="btn btn-primary reveal delay-2" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank">
-        Quero garantir minha vaga por R$97
-      </a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      João Neto | Desatar Consultoria Comercial
-    </div>
-  </footer>
-
-  <a class="floating-whatsapp" href="https://wa.me/5545999888823?text=Ol%C3%A1%2C%20quero%20garantir%20minha%20vaga%20na%20turma%20do%20WhatsApp%20que%20Vende%20por%20R%2497." target="_blank" aria-label="Quero entrar na turma">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.33c-.29-.14-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.14-.19.29-.73.94-.89 1.13-.17.19-.33.21-.62.07-.29-.14-1.2-.44-2.29-1.39-.85-.76-1.43-1.69-1.6-1.97-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.43.9 1.43 2.57 3.56 6.21 4.99.87.38 1.55.6 2.08.76.87.28 1.66.24 2.29.15.7-.1 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.12-.26-.19-.55-.33zM16.02 3.2c-7.03 0-12.72 5.69-12.72 12.71 0 2.24.58 4.42 1.69 6.34L3 29l6.95-1.82a12.67 12.67 0 0 0 6.07 1.55h.01c7.02 0 12.71-5.69 12.71-12.72 0-3.4-1.32-6.59-3.73-8.99A12.63 12.63 0 0 0 16.02 3.2zm0 23.39h-.01c-1.91 0-3.79-.51-5.43-1.47l-.39-.23-4.12 1.08 1.1-4.02-.25-.41a10.47 10.47 0 0 1-1.61-5.6c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.43 1.09 7.41 3.08a10.4 10.4 0 0 1 3.07 7.42c0 5.8-4.72 10.5-10.5 10.5z"/>
-    </svg>
-    <span>Quero entrar na turma</span>
-  </a>
-
-  <script>
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach((element) => observer.observe(element));
-  </script>
+  revealElements.forEach((element) => observer.observe(element));
+</script>
 
 </body>
 </html>
